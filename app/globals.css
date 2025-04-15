@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 /* START: General styles */
@@ -16,9 +16,9 @@
   @apply max-w-[1440px] mx-auto;
 }
 
-/* .padding-x {
+.padding-x {
   @apply sm:px-16 px-6;
-} */
+}
 
 .padding-y {
   @apply py-4;
@@ -162,7 +162,7 @@
 }
 
 .footer__links-container {
-  @apply flex max-md:flex-col flex-wrap justify-between gap-5 px-6 py-10;
+  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
 }
 
 .footer__rights {
@@ -178,7 +178,7 @@
 }
 
 .footer__copyrights {
-  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 px-6 py-10;
+  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
 }
 
 .footer__copyrights-link {
