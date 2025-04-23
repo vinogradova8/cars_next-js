@@ -1,14 +1,27 @@
 import { Hero } from '@/components';
+import { CustomFilter } from '@/components';
+import { SearchBar } from '@/components';
 
 export default function Home() {
-	return (
+  return (
     <main className='overflow-hidden'>
       <Hero />
+
+      <div className='mt-12 padding-x padding-y max-width' id='discover'>
+        <div className='home__text-container'>
+          <h1 className='text-4xl font-extrabold'>Car Catalogue</h1>
+          <p>Explore the cars you might like</p>
+        </div>
+
+        <div className='home__filters'>
+          <SearchBar />
+
+          <div className='home__filter-container'>
+            <CustomFilter />
+            <CustomFilter />
+          </div>
+        </div>
+      </div>
     </main>
-    // <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-    //   <main className='overflow-hidden'>
-    //     <Hero />
-    //   </main>
-    // </div>
   );
 }
