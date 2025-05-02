@@ -27,7 +27,7 @@ const SearchManufacturer = ({
 
   return (
     <div className='search-manufacturer'>
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className='relative w-full'>
           <ComboboxButton className='absolute top-[14px]'>
             <Image
@@ -54,14 +54,38 @@ const SearchManufacturer = ({
             afterLeave={() => setQuery('')}
           >
             <ComboboxOptions>
-              {filteredManufacturers.length === 0 && query !== '' && (
+              {filteredManufacturers.map((item) => (
                 <ComboboxOption
-                  value={query}
-                  className='search-manufacturer__option'
+                  key={item}
+                  value={item}
+                  className={({ selected, focus }) =>
+                    `relative search-manufacturer__option
+   									 ${focus ? 'bg-blue-600 text-white' : 'text-gray-900'}
+   									 ${selected ? 'font-medium' : 'font-normal'}`
+                  }
                 >
-                  Create "{query}"
+                  <span className='block truncate'>{item}</span>
+                  {/* {({ selected, focus }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? 'font-medium' : 'font-normal'
+                        }`}
+                      >
+                        {item}
+                      </span>
+
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                            focus ? 'text-white' : 'text-pribg-primary-purple'
+                          }`}
+                        ></span>
+                      ) : null}
+                    </>
+                  )} */}
                 </ComboboxOption>
-              )}
+              ))}
             </ComboboxOptions>
           </Transition>
         </div>
